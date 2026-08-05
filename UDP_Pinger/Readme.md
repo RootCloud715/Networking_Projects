@@ -23,7 +23,8 @@ udp-pinger/
 ├── client.py
 ├── server.py
 ├── README.md
-└── LICENSE
+├── LICENSE
+└── .gitignore
 ```
 
 ## Requirements
