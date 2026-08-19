@@ -4,7 +4,7 @@ A Python mail client that connects to Gmail's SMTP server and sends an email ove
 
 ## Files
 
-- `raw_socket_client.py` — sends mail using only the `socket` and `ssl` modules. Manually performs the TLS handshake, sends each SMTP command (`EHLO`, `AUTH LOGIN`, `MAIL FROM`, `RCPT TO`, `DATA`), and reads the server's response after each step.
+- `raw_socket.py` — sends mail using only the `socket` and `ssl` modules. Manually performs the TLS handshake, sends each SMTP command (`EHLO`, `AUTH LOGIN`, `MAIL FROM`, `RCPT TO`, `DATA`), and reads the server's response after each step.
 - `smtp_client.py` — the interactive client, built on `smtplib` and `email.message.EmailMessage`. Prompts for subject, body, and an optional attachment path at runtime instead of sending a fixed message.
 
 ## Setup
@@ -61,7 +61,7 @@ Leaving the attachment prompt blank sends a plain text-only email. Any file path
 | 9 | headers + blank line + body + `.` | `250` | Message accepted |
 | 10 | `QUIT` | `221` | Connection closed |
 
-`raw_socket_client.py` performs each of these steps explicitly. `smtp_client.py` performs the same sequence internally through `smtplib`.
+`raw_socket.py` performs each of these steps explicitly. `smtp_client.py` performs the same sequence internally through `smtplib`.
 
 ## How the attachment is built
 
